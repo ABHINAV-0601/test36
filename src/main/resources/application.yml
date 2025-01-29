@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+management:
+  endpoints:
+    web:
+      base-path: /promotions
+spring:
+  profiles:
+    active: ${PROFILE:dh,dev}
+  application:
+    name: color-picker-api
+#===== stag ===== #
+dotNet:
+  host: ${GSO_HOST}
+  uri: "/api/v1/gso"
+# ===== log===== #
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+  config:
+    classpath: logback.xml
+    path: ./log/${spring.application.name}
+
+
